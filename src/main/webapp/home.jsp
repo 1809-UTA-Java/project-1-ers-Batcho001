@@ -11,15 +11,15 @@
      <title>Result Page</title>
 </head>
 <body>
-     <div id="container">
+     <div>
          <h1>Result Page</h1>
              <b>Employee Home Page</b><br/>
              <%=new Date()%>
              <%
                  Employees emp = (Employees) session.getAttribute("employees");
              %>     
-             <b>Welcome <%= emp.getFname() + " " + emp.getLname()%></b>     
-             <br/>
+             
+            
              <a href="logout.jsp">Logout</a>
  
          <table>
@@ -30,25 +30,9 @@
                      <th>First Name</th>
                      <th>Last Name</th>
                      <th>email</th>
-                     <th>R_Id</th>                
                  </tr>
              </thead>
-             <tbody>
-                 <%
-                     LoginService loginService = new LoginService();
-                     List<Employees> list = loginService.getListOfUsers();
-                     for (Employees e : list) {
-                 %>
-                 <tr>
-                     <td><%=e.getId()%></td>
-                     <td><%=e.getUsername() %>
-                     <td><%=e.getFname()%></td>
-                     <td><%=e.getLname()%></td>
-                     <td><%=e.getEmail()%></td>
-                     <td><%=e.getRid()%>
-                 </tr>
-                 <%}%>
-             <tbody>
+             
          </table>    
          <br/>
      </div>

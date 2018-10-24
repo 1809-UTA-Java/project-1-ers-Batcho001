@@ -6,8 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.transaction.SystemException;
-
 import com.revature.models.Employees;
 import com.revature.repositories.LoginService;
 
@@ -21,7 +19,7 @@ public class Login extends HttpServlet{
 	    String password = request.getParameter("password");
 	    LoginService loginService = new LoginService();
 		
-		Employees emp = loginService.getEmpByUsername(username);
+		Employees emp = loginService.getUser(username, password);
 		boolean result = loginService.UserAuthenticater(username, password);
 			
 		if(result == true){

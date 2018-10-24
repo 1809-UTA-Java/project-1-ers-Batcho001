@@ -20,3 +20,4 @@ target/classes/com/revature/repositories/LoginService.class
 target/classes/com/revature/models/Roles.class
 target/classes/com/revature/models/Employees.class
 BankingApp.sql
+target/classes/com/revature/utilities/MyBankConnection.class
